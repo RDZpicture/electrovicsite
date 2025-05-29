@@ -1,0 +1,100 @@
+[⚠️ Suspicious Content] <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroVic - Servicios</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .services-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .services-section h1 {
+            font-size: 3em;
+            color: #1a3c5e;
+            margin: 0 0 40px 0;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3 {
+            font-size: 1.5em;
+            color: #1a3c5e;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.5;
+        }
+        .hero-logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero-logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 20px;
+            }
+            .services-section h1 {
+                font-size: 2em;
+            }
+            .service-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="services-section">
+        <div class="hero-logo">
+            <img src="https://i.ibb.co/C3BLbT2S/EVremaster.png" alt="ElectroVic Logo">
+        </div>
+        <h1>Servicios</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Mantenimiento y Reparación</h3>
+                <p>Lavadoras, Refrigeradores, Licuadoras, Ventiladores, ETC.</p>
+            </div>
+            <div class="service-card">
+                <h3>Instalaciones Eléctricas</h3>
+                <p>Soluciones completas de instalación eléctrica.</p>
+            </div>
+            <div class="service-card">
+                <h3>Climas</h3>
+                <p>Instalación, reparación y mantenimiento de aires acondicionados, ETC.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
