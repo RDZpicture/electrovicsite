@@ -1,4 +1,4 @@
-[⚠️ Suspicious Content] <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,45 @@
             padding: 0;
             background-color: #f5f5f5;
         }
+
+        /* Barra de navegación decorada */
+        nav {
+            background-color: #1a3c5e;
+            padding: 15px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #2a5d8c;
+            color: #ffffff;
+        }
+
         .services-section {
             display: flex;
             flex-direction: column;
@@ -19,6 +58,7 @@
             min-height: 100vh;
             background-color: #f5f5f5;
         }
+
         .services-section h1 {
             font-size: 3em;
             color: #1a3c5e;
@@ -26,6 +66,7 @@
             text-transform: uppercase;
             text-align: center;
         }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -33,6 +74,7 @@
             max-width: 1200px;
             width: 100%;
         }
+
         .service-card {
             background-color: white;
             padding: 20px;
@@ -41,41 +83,65 @@
             text-align: center;
             transition: transform 0.3s;
         }
+
         .service-card:hover {
             transform: translateY(-10px);
         }
+
         .service-card h3 {
             font-size: 1.5em;
             color: #1a3c5e;
             margin-bottom: 10px;
         }
+
         .service-card p {
             font-size: 1.1em;
             color: #333;
             line-height: 1.5;
         }
+
         .hero-logo {
             text-align: center;
             margin-bottom: 40px;
         }
+
         .hero-logo img {
             max-width: 200px;
             height: auto;
         }
+
         @media (max-width: 768px) {
             .services-section {
                 padding: 20px;
             }
+
             .services-section h1 {
                 font-size: 2em;
             }
+
             .service-card {
                 padding: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Servicions.html">Servicios</a></li>
+            <li><a href="Conoceme.html">Conóceme</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de servicios -->
     <section class="services-section">
         <div class="hero-logo">
             <img src="https://i.ibb.co/C3BLbT2S/EVremaster.png" alt="ElectroVic Logo">

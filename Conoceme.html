@@ -1,149 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElectroVic - Conóceme</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .about-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 20px;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-        }
-        .about-section h1 {
-            font-size: 3em;
-            color: #1a3c5e;
-            margin: 0 0 40px 0;
-            text-transform: uppercase;
-            text-align: center;
-        }
-        .hero-logo {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .hero-logo img {
-            max-width: 200px;
-            height: auto;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            width: 100%;
-            margin-bottom: 40px;
-        }
-        .about-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .about-card:hover {
-            transform: translateY(-10px);
-        }
-        .about-card h2 {
-            font-size: 1.5em;
-            color: #1a3c5e;
-            margin-bottom: 10px;
-        }
-        .about-card p, .about-card ul {
-            font-size: 1.1em;
-            color: #333;
-            line-height: 1.5;
-            margin: 0;
-        }
-        .about-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .about-card ul li {
-            margin: 10px 0;
-        }
-        .experience-item {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-        .experience-item h3 {
-            font-size: 1.2em;
-            color: #1a3c5e;
-            margin: 0 0 5px 0;
-        }
-        .experience-item p {
-            margin: 0;
-        }
-        @media (max-width: 768px) {
-            .about-section {
-                padding: 20px;
-            }
-            .about-section h1 {
-                font-size: 2em;
-            }
-            .about-card {
-                padding: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectroVic - Conóceme</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* Barra de navegación decorada */
+    nav {
+      background-color: #1a3c5e;
+      padding: 15px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #2a5d8c;
+      color: #ffffff;
+    }
+
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .about-section h1 {
+      font-size: 3em;
+      color: #1a3c5e;
+      margin: 0 0 40px 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .hero-logo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-logo img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .about-card {
+      background-color: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-card h2 {
+      font-size: 1.7em;
+      color: #1a3c5e;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+
+    .about-card p,
+    .about-card ul {
+      font-size: 1.1em;
+      color: #444;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .about-card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .about-card ul li {
+      margin: 8px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .about-card ul li::before {
+      content: "✔";
+      color: #1a3c5e;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .experience-item {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .experience-item h3 {
+      font-size: 1.2em;
+      color: #1a3c5e;
+      margin: 0 0 5px 0;
+    }
+
+    .experience-item p {
+      margin: 0;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 20px;
+      }
+
+      .about-section h1 {
+        font-size: 2em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .about-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <section class="about-section">
-        <div class="hero-logo">
-            <img src="https://i.ibb.co/C3BLbT2S/EVremaster.png" alt="ElectroVic Logo">
+
+  <!-- Barra de navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Servicions.html">Servicios</a></li>
+      <li><a href="Conoceme.html">Conóceme</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de "Conóceme" -->
+  <section class="about-section">
+    <div class="hero-logo">
+      <img src="https://i.ibb.co/C3BLbT2S/EVremaster.png" alt="ElectroVic Logo">
+    </div>
+    <h1>Conóceme</h1>
+    <div class="about-grid">
+      <div class="about-card">
+        <h2>Resumen Profesional</h2>
+        <p>Ingeniero y técnico en refrigeración con más de 5 años de experiencia, capacitado para resolver cualquier tipo de problema técnico. Me he profesionalizado trabajando con empresas industriales de alta demanda y ofreciendo servicios particulares.</p>
+      </div>
+      <div class="about-card">
+        <h2>Experiencia Laboral</h2>
+        <div class="experience-item">
+          <h3>Técnico en Refrigeración - Chula Brand (2023–2025)</h3>
+          <p>Especializado en reparación de enfriadores industriales.</p>
         </div>
-        <h1>Conóceme</h1>
-        <div class="about-grid">
-            <div class="about-card">
-                <h2>Resumen Profesional</h2>
-                <p>Ingeniero y técnico en refrigeración con experiencia laboral de más de  5 años, capacitado para cualquier tipo de problema. A lo largo de estos años he podido profesionalizarme en estos rubros, trabajando en empresas industriales de gran demanda.</p>
-            </div>
-            <div class="about-card">
-                <h2>Experiencia Laboral</h2>
-                <div class="experience-item">
-                    <h3>Técnico en Refrigeración - Empresa Chula Brand (2023-2025)</h3>
-                    <p>Reparación de enfriadores de gran tamaño.</p>
-                </div>
-                <div class="experience-item">
-                    <h3>Refrigeración - Servicio Particular (2020-2025)</h3>
-                    <p>Amplia experiencia trabajando de manera independiente.</p>
-                </div>
-                <div class="experience-item">
-                    <h3>Aires Acondicionados - TITSA (2020-2025)</h3>
-                    <p>Climatización de bases con aires centrales y minisplit.</p>
-                </div>
-                <div class="experience-item">
-                    <h3>Ingeniero Eléctrico - TITSA (2020-2025)</h3>
-                    <p>Ingeniería eléctrica general y mantenimiento de base.</p>
-                </div>
-            </div>
-            <div class="about-card">
-                <h2>Habilidades</h2>
-                <ul>
-                    <li>Liderazgo</li>
-                    <li>Comunicación asertiva</li>
-                    <li>Resolución de problemas</li>
-                    <li>Trabajo en equipo</li>
-                </ul>
-            </div>
-            <div class="about-card">
-                <h2>Educación</h2>
-                <ul>
-                    <li>Ingeniería Mecatrónica</li>
-                    <li>Ingeniería Eléctrica - Universidad Cuitláhuac</li>
-                    <li>Técnico en Refrigeración - Universidad Cuitláhuac</li>
-                </ul>
-            </div>
+        <div class="experience-item">
+          <h3>Servicio Particular (2020–2025)</h3>
+          <p>Trayectoria independiente ofreciendo servicios de refrigeración.</p>
         </div>
-    </section>
+        <div class="experience-item">
+          <h3>Aires Acondicionados - TITSA (2020–2025)</h3>
+          <p>Climatización de espacios con sistemas centrales y minisplits.</p>
+        </div>
+        <div class="experience-item">
+          <h3>Ingeniero Eléctrico - TITSA (2020–2025)</h3>
+          <p>Responsable del mantenimiento y diseño eléctrico de instalaciones.</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <h2>Habilidades</h2>
+        <ul>
+          <li>Liderazgo</li>
+          <li>Comunicación asertiva</li>
+          <li>Resolución de problemas</li>
+          <li>Trabajo en equipo</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h2>Educación</h2>
+        <ul>
+          <li>Ingeniería Mecatrónica</li>
+          <li>Ingeniería Eléctrica - Universidad Cuitláhuac</li>
+          <li>Técnico en Refrigeración - Universidad Cuitláhuac</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
